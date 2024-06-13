@@ -27,7 +27,6 @@ function resizeCanvas() {
   const elContainer = document.querySelector('.canvas-container')
   //* Changing the canvas dimension clears the canvas
   gElCanvas.width = elContainer.clientWidth - 40 //* Subtracting 20px padding from each side
-  drawText('Drawing text!', gElCanvas.width / 2, gElCanvas.height / 2)
 }
 
 // function onDraw(ev) {
