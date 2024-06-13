@@ -1,0 +1,21 @@
+/* MAIN-GALLERY */
+
+img {
+  width: 50px;
+}
+
+/* MAIN EDITOR */
+.editor-content {
+  display: grid;
+  grid-template-columns: minmax(500px, 1fr) 1fr;
+  /* grid-template-columns: 1fr 1fr; */
+  gap: 20px;
+}
+
+.canvas-container {
+  background-color: seashell;
+}
+
+.menu-container {
+  background-color: pink;
+}

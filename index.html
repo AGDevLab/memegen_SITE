@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/main.css" />
+    <!-- <link rel="stylesheet" href="css/main.css" /> -->
+    <link rel="stylesheet" href="css/styles.css" />
     <title>memeGen</title>
   </head>
   <!-- <body> -->
   <body onload="onInit()">
     <h1>memeGen</h1>
     <section class="gallery-container"></section>
+    <img src="img/1.jpg" onclick="onSelectImg(this)" alt="" />
 
     <dialog class="editor">
       <div class="editor-content">
@@ -18,8 +20,6 @@
         </form>
         <section class="menu-container">
           <div>
-            <img src="img/1.jpg" onclick="onSelectImg(this)" alt="" />
-
             <button onclick="onClearCanvas()">Clear</button>
           </div>
         </section>
