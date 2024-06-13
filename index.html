@@ -4,9 +4,34 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>Document</title>
+    <title>memeGen</title>
   </head>
-  <body>
+  <!-- <body> -->
+  <body onload="onInit()">
+    <h1>memeGen</h1>
+    <section class="gallery-container"></section>
+
+    <dialog id="editor">
+      <div class="editor-content">
+        <form class="canvas-container">
+          <canvas width="500" height="500" onclick="onDraw(event)"> </canvas>
+        </form>
+        <section class="menu-container">
+          <div>
+            <button onclick="onSetShape('line')">Line</button>
+            <button onclick="onSetShape('triangle')">Triangle</button>
+            <button onclick="onSetShape('rect')">Rect</button>
+            <button onclick="onSetShape('circle')">Circle</button>
+            <button onclick="onSetShape('text')">Text</button>
+            <button onclick="onClearCanvas()">Clear</button>
+          </div>
+          <div>
+            <p class="shape-title">Line</p>
+          </div>
+        </section>
+      </div>
+    </dialog>
+    <!-- <button id="showDialog">Show the dialog</button> -->
     <script src="js/main.js"></script>
   </body>
 </html>
