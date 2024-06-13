@@ -6,13 +6,13 @@ function coverCanvasWithImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-//* Let's use the image natural width and height
-function drawImg3() {
-  const elImg = new Image()
-  elImg.src = 'img/square.jpg'
-  // elImg.src = 'img/wide.jpg'
-  // elImg.src = 'img/tall.jpg'
-  elImg.onload = () => {
-    gCtx.drawImage(elImg, 0, 0, elImg.naturalWidth, elImg.naturalHeight)
-  }
+function drawText(text, x, y) {
+  gCtx.lineWidth = 2
+  gCtx.strokeStyle = 'brown'
+  gCtx.fillStyle = 'black'
+  gCtx.font = '40px Arial'
+  gCtx.textAlign = 'center'
+  gCtx.textBaseline = 'middle'
+  gCtx.fillText(text, x, y)
+  gCtx.strokeText(text, x, y)
 }
