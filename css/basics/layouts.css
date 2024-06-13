@@ -16,6 +16,7 @@ img {
   background-color: seashell;
 }
 
-.menu-container {
+.editor-menu {
+  display: grid;
   background-color: pink;
 }

@@ -18,9 +18,19 @@
         <form class="canvas-container">
           <canvas width="500" height="500" onclick="onDraw(event)"> </canvas>
         </form>
-        <section class="menu-container">
-          <div>
-            <button onclick="onClearCanvas()">Clear</button>
+        <section class="editor-menu">
+          <div class="meme-input-field">
+            <input type="search" />
+            <button class="btn switch-line">switch-line</button>
+            <button class="btn addline">addline</button>
+            <button class="btn deleteline">deleteline</button>
+          </div>
+          <div class="editor-text-options">
+            <button class="btn btn-expand-font">btn-expand-font</button>
+            <button class="btn btn-shrink-font">btn-shrink-font</button>
+          </div>
+          <div class="canvas-output-buttons">
+            <button onclick="onClearCanvas()">Clear Canvas</button>
           </div>
         </section>
       </div>
