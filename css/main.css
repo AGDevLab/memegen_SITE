@@ -10,13 +10,13 @@ body {
   background-color: lightblue;
 }
 
-dialog {
+/* dialog {
   display: block;
-}
+} */
 
 .editor-content {
   display: grid;
-  grid-template-columns: minmax(550px, 1fr) 1fr;
+  grid-template-columns: minmax(500px, 1fr) 1fr;
   /* grid-template-columns: 1fr 1fr; */
   gap: 20px;
 }

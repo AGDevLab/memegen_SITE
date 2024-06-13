@@ -6,7 +6,7 @@ var gCtx
 function renderMeme() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
-  //   console.log('gCtx:', gCtx)
+  console.log('gCtx:', gCtx)
 }
 
 function onSelectImg(elImg) {
@@ -24,7 +24,7 @@ function onClearCanvas() {
 }
 
 function resizeCanvas() {
-  const elContainer = document.querySelector('.canvas-container')
+  const elContainer = document.querySelector('canvas')
   //* Changing the canvas dimension clears the canvas
   gElCanvas.width = elContainer.clientWidth - 40 //* Subtracting 20px padding from each side
 }
