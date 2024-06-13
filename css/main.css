@@ -16,8 +16,8 @@ dialog {
 
 .editor-content {
   display: grid;
-  /* grid-template-columns: minmax(20px, 550px) minmax(20px, 1fr); */
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: minmax(550px, 1fr) 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   gap: 20px;
 }
 
@@ -27,4 +27,8 @@ dialog {
 
 .menu-container {
   background-color: pink;
+}
+
+img {
+  width: 50px;
 }
