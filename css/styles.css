@@ -1,4 +1,5 @@
 /* BASIC */
 
-@import url(css/basics/base.css);
-@import url(css/basics/layouts.css);
+@import url(basics/base.css);
+@import url(basics/layouts.css);
+@import url(basics/vars.css);
