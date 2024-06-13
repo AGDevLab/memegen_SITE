@@ -1,14 +1,5 @@
 'use strict'
 
-var gElCanvas
-var gCtx
-
-function renderMeme() {
-  gElCanvas = document.querySelector('canvas')
-  gCtx = gElCanvas.getContext('2d')
-  console.log('gCtx:', gCtx)
-}
-
 function onSelectImg(elImg) {
   coverCanvasWithImg(elImg)
 }

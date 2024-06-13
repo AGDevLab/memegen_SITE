@@ -11,7 +11,12 @@
   <body onload="onInit()">
     <h1>memeGen</h1>
     <section class="gallery-container"></section>
-    <img src="img/1.jpg" onclick="onSelectImg(this)" alt="" />
+    <input type="search" />
+    <img
+      src="img/1.jpg"
+      onclick="renderMeme(src = 'img/1.jpg', 'test text')"
+      alt=""
+    />
 
     <dialog class="editor">
       <div class="editor-content">
@@ -20,16 +25,23 @@
         </form>
         <section class="editor-menu">
           <div class="meme-input-field">
-            <input type="search" />
+            <!-- Implement text input on search field -->
+            <p class="textinput">Enter your text below</p>
+            <input type="search" placeholder="Input meme text" />
+            <p class="edit-text">Add/Change input text</p>
+
             <button class="btn switch-line">switch-line</button>
             <button class="btn addline">addline</button>
             <button class="btn deleteline">deleteline</button>
           </div>
           <div class="editor-text-options">
+            <p class="font-editor">Font Options</p>
             <button class="btn btn-expand-font">btn-expand-font</button>
             <button class="btn btn-shrink-font">btn-shrink-font</button>
           </div>
+
           <div class="canvas-output-buttons">
+            <p class="outputs">Save/Share your memes</p>
             <button onclick="onClearCanvas()">Clear Canvas</button>
           </div>
         </section>
