@@ -42,6 +42,10 @@ function setCurrMeme(imgId) {
 }
 
 function getMemes() {
+  return gMemes
+}
+
+function setMemes() {
   const memes = gImgs.map(
     (meme) =>
       (meme = {

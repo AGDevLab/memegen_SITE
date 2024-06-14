@@ -3,7 +3,7 @@
 function onInit() {
   gElCanvas = document.querySelector('canvas')
   gCtx = gElCanvas.getContext('2d')
-  console.log('gCtx:', gCtx)
+  gMemes = setMemes()
   renderGallery()
 
   resizeCanvas()
