@@ -12,11 +12,7 @@
     <h1>memeGen</h1>
     <section class="gallery-container"></section>
     <input type="search" />
-    <img
-      src="img/1.jpg"
-      onclick="renderMeme(src = 'img/1.jpg', 'test text')"
-      alt=""
-    />
+    <img src="img/1.jpg" onclick="renderMeme(this)" alt="" />
 
     <dialog class="editor">
       <div class="editor-content">
@@ -27,11 +23,16 @@
           <div class="meme-input-field">
             <!-- Implement text input on search field -->
             <p class="textinput">Enter your text below</p>
-            <input type="search" placeholder="Input meme text" />
-            <p class="edit-text">Add/Change input text</p>
+            <!-- <input type="search" placeholder="Input meme text" />
+            <p class="edit-text">Add/Change input text</p> -->
+            <input type="text" id="myInput" placeholder="Enter text" />
+
+            <!-- Button to get input value -->
+            <!-- <button onclick="setLineTxt()">Get Value</button> 
+            </div> -->
 
             <button class="btn switch-line">switch-line</button>
-            <button class="btn addline">addline</button>
+            <button class="btn addline" onclick="setLineTxt()">addline</button>
             <button class="btn deleteline">deleteline</button>
           </div>
           <div class="editor-text-options">
