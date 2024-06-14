@@ -3,7 +3,10 @@
 var gElCanvas
 var gCtx
 
-var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }]
+var gImgs = [
+  { id: 1, url: 'img/1.jpg', keywords: ['funny', 'politics'] },
+  { id: 2, url: 'img/2.jpg', keywords: ['cute', 'dog'] },
+]
 var gMeme = {
   selectedImgId: 5,
   selectedLineIdx: 0,
@@ -40,44 +43,33 @@ function getMeme() {
   return gMeme
 }
 
-function renderMeme(elGalleryImg) {
+function renderMeme() {
   const meme = getMeme()
   const memeInfo = meme.lines
   const msgInput = memeInfo[0].txt
 
-  const src = elGalleryImg.src
+  const src = gImgs[0].url
+  console.log(src)
+
   const showEditor = document.querySelector('.editor')
-  // console.log(showEditor)
   showEditor.showModal()
   const elImg = new Image()
   elImg.src = src
-  coverCanvasWithImg(elImg)
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
 }
 
 function setLineTxt() {
-  // Get the input element by its ID
   let inputField = document.getElementById('myInput')
   const meme = getMeme()
   const memeInfo = meme.lines
-  // const msgInput = memeInfo[0].txt
-
-  // Get the value of the input field
   memeInfo[0].txt = inputField.value
   console.log(memeInfo[0].txt)
-
-  // renderMeme()
-
-  // return value
+  renderMeme()
 }
 
-function coverCanvasWithImg(elImg) {
-  // fixed sizing probably wrong, to be checked later, continuing development
-  // gElCanvas.width = 500
-  // gElCanvas.height =
-  //   (elImg.naturalHeight / elImg.naturalWidth) * gElCanvas.width
-  // console.dir(elImg)
+function getMemeById(idx) {}
 
+function coverCanvasWithImg(elImg) {
   gElCanvas.width = elImg.naturalWidth
   gElCanvas.height = elImg.naturalHeight
 

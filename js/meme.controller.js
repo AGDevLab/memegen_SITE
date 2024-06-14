@@ -12,6 +12,7 @@ function onInit() {
 
 function onSelectImg(elImg) {
   coverCanvasWithImg(elImg)
+  renderMeme()
 }
 
 function onImgInput(ev) {
