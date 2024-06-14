@@ -1,0 +1,7 @@
+footer {
+  display: grid;
+  height: 100px;
+
+  background: rgba(255, 127, 0, 1);
+  place-items: center;
+}

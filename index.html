@@ -8,15 +8,17 @@
     <title>memeGen</title>
   </head>
   <!-- <body> -->
-  <body onload="onInit()">
-    <header>
-      <div class="logo">Logo</div>
-      <section class="main-nav">
-        <ul class="navBtns">
-          <li><a href="#">Gallery</a></li>
-          <li><a href="#">about</a></li>
-        </ul>
-      </section>
+  <body class="main-layout" onload="onInit()">
+    <header class="main-header main-layout full">
+      <div class="header-content">
+        <div class="logo"><img src="Assets/LOGO/LOGO.png" alt="" /></div>
+        <section class="main-nav">
+          <ul class="clean-list grid flow-column">
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">about</a></li>
+          </ul>
+        </section>
+      </div>
     </header>
     <div class="gallery-menu">
       <input type="search" />
@@ -33,6 +35,11 @@
         alt=""
       />
     </section>
+
+    <footer class="main-layout full">
+      <div class="logo"><img src="Assets/LOGO/LOGO.png" alt="" /></div>
+      <h4 class="rights-reserved">all rights reserved 2019</h4>
+    </footer>
 
     <dialog class="editor">
       <div class="editor-content">
