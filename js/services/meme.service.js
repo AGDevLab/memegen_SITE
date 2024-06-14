@@ -3,10 +3,6 @@
 var gElCanvas
 var gCtx
 
-var gImgs = [
-  { id: 1, url: 'img/1.jpg', keywords: ['funny', 'politics'] },
-  { id: 2, url: 'img/2.jpg', keywords: ['cute', 'dog'] },
-]
 var gMeme = {
   selectedImgId: 5,
   selectedLineIdx: 0,
@@ -51,11 +47,15 @@ function renderMeme() {
   const src = gImgs[0].url
   console.log(src)
 
-  const showEditor = document.querySelector('.editor')
-  showEditor.showModal()
+  const memeEditor = document.querySelector('.editor')
+  memeEditor.showModal()
   const elImg = new Image()
   elImg.src = src
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
+  const closeBtn = document.querySelector('.close')
+  closeBtn.addEventListener('click', () => {
+    memeEditor.close()
+  })
 }
 
 function setLineTxt() {

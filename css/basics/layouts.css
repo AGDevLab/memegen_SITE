@@ -1,7 +1,16 @@
 /* MAIN-GALLERY */
 
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 150px));
+  grid-auto-flow: dense;
+  gap: 10px;
+  margin-block: 20px;
+}
+
 img {
-  width: 50px;
+  border-radius: 10px;
+  width: 100%;
 }
 
 /* MAIN EDITOR */

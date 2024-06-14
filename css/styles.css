@@ -5,4 +5,5 @@
 @import url(basics/vars.css);
 
 /* COMPONENTS */
-/* @import url(components/editor.css); */
+@import url(components/gallery.css);
+@import url(components/editor.css);

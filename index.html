@@ -10,10 +10,13 @@
   <!-- <body> -->
   <body onload="onInit()">
     <h1>memeGen</h1>
-    <section class="gallery-container"></section>
-    <input type="search" />
-    <img src="img/1.jpg" onclick="onSelectImg(this)" alt="" />
-    <img src="img/2.jpg" onclick="onSelectImg(this)" alt="" />
+    <section class="main-nav">
+      <input type="search" />
+    </section>
+    <section class="gallery-container">
+      <img src="img/1.jpg" onclick="onSelectImg(this)" alt="" />
+      <img src="img/2.jpg" onclick="onSelectImg(this)" alt="" />
+    </section>
 
     <dialog class="editor">
       <div class="editor-content">
@@ -45,12 +48,14 @@
           <div class="canvas-output-buttons">
             <p class="outputs">Save/Share your memes</p>
             <button onclick="onClearCanvas()">Clear Canvas</button>
+            <button class="close" autofocus>Close Editor</button>
           </div>
         </section>
       </div>
     </dialog>
     <!-- <button id="showDialog">Show the dialog</button> -->
     <script src="js/services/meme.service.js"></script>
+    <script src="js/gallery.controller.js"></script>
     <script src="js/meme.controller.js"></script>
   </body>
 </html>
