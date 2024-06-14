@@ -1,0 +1,23 @@
+/* EDITOR ELEMENTS */
+
+.switch {
+  /* background-image: var(--editor-btn-switch); */
+  /* background-image: url('Assets/ICONS/up-and-down-opposite-double-arrows-side-by-side.png'); */
+
+  background-image: url('Assets/ICONS/up-and-down.png');
+  background-size: cover; /* Adjust the background image size to cover the entire button */
+  background-repeat: no-repeat; /* Prevent the background image from repeating */
+  width: 200px; /* Set the width of the button */
+  height: 50px; /* Set the height of the button */
+  color: blue; /* Set the text color of the button */
+  border: none; /* Remove the button border */
+  text-align: center; /* Center the text within the button */
+  font-size: 16px; /* Set the font size of the text */
+}
+
+.switchImg {
+  background-image: url('Assets/ICONS/up-and-down.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%; /* Adjust size as needed */
+}

@@ -21,11 +21,8 @@ img {
   gap: 20px;
 }
 
-.canvas-container {
+/* .canvas-container {
   background-color: seashell;
-}
-
-.editor-menu {
-  display: grid;
-  background-color: pink;
-}
+  border-radius: 2em;
+  border: 1px solid black;
+} */

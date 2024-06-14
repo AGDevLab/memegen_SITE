@@ -80,7 +80,7 @@ function renderMeme() {
 }
 
 function setLineTxt() {
-  let inputField = document.getElementById('myInput')
+  let inputField = document.querySelector('.text-input')
   const meme = getMeme()
   const memeInfo = meme.lines
   memeInfo[0].txt = inputField.value

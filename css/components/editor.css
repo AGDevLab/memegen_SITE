@@ -1,28 +1,102 @@
-/* .buttonIn {
-  width: 300px;
-  position: relative;
+.editor {
+  width: 1200px;
+  height: 600px;
+  background-color: var(--editor-bg-gray);
 }
 
-input {
-  margin: 0px;
-  padding: 0px;
+canvas {
+  border-radius: 2em;
+}
+
+.editor-menu {
+  display: grid;
+}
+
+.meme-input-editor {
+  display: grid;
+  place-items: center;
+}
+
+.text-input {
+  width: 373px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: white;
+}
+
+/* Dropdown container to control the width */
+
+.editor-text-options {
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  gap: 5px;
+}
+
+.dropdown-container {
+  grid-column: span 3;
+  align-self: center;
+  justify-self: stretch;
+}
+
+.font-selector {
+  grid-area: fs;
   width: 100%;
-  outline: none;
-  height: 30px;
-  border-radius: 5px;
+  height: 60px;
+  border-radius: 12px;
+  background-color: white;
+  border: none;
+
+  font-size: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button {
-  position: absolute;
-  top: 0;
-  border-radius: 5px;
-  right: 0px;
-  z-index: 2;
-  border: none;
-  top: 2px;
-  height: 30px;
-  cursor: pointer;
+.meme-input-editor {
+  display: grid;
+}
+
+/* Main canvas output buttons container */
+.canvas-output-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1.5fr);
+  gap: 10px;
+  place-items: center;
+}
+
+/* Button styles for output buttons */
+.btnOutput {
+  background-color: var(--main-orange);
+  width: 90px;
   color: white;
-  background-color: #1e90ff;
-  transform: translateX(2px);
+
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btnOutput.download {
+  grid-column: 1;
+}
+
+.btnOutput.save {
+  grid-column: 2;
+}
+
+.btnOutput.share {
+  grid-column: 3;
+}
+
+/* dialog {
+  display: block;
 } */

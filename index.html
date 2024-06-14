@@ -40,36 +40,94 @@
           <canvas width="500" height="500" onclick="onDraw(event)"> </canvas>
         </form>
         <section class="editor-menu">
-          <div class="meme-input-field">
-            <!-- Implement text input on search field -->
-            <p class="textinput">Enter your text below</p>
-            <!-- <input type="search" placeholder="Input meme text" />
-            <p class="edit-text">Add/Change input text</p> -->
-            <input type="text" id="myInput" placeholder="Enter text" />
-
-            <!-- Button to get input value -->
-            <!-- <button onclick="setLineTxt()">Get Value</button> 
-            </div> -->
-
-            <button class="btn switch-line">switch-line</button>
-            <button class="btn addline" onclick="setLineTxt()">addline</button>
-            <button class="btn deleteline">deleteline</button>
+          <div class="meme-input-editor">
+            <div class="input-field">
+              <input type="text" class="text-input" placeholder="Enter text" />
+            </div>
+            <div class="input-buttons">
+              <button class="btn switch-line">
+                <img
+                  src="Assets/ICONS/up-and-down.png"
+                  alt="switch lines button"
+                  class="icon-image"
+                />
+              </button>
+              <button class="btn addline" onclick="setLineTxt()">
+                <img
+                  src="Assets/ICONS/add.png"
+                  alt="add line button"
+                  class="icon-image"
+                />
+              </button>
+              <button class="btn deleteline">
+                <img
+                  src="Assets/ICONS/trash.png"
+                  alt="delete line button"
+                  class="icon-image"
+                />
+              </button>
+            </div>
           </div>
           <div class="editor-text-options">
-            <p class="font-editor">Font Options</p>
-            <button class="btn btn-expand-font">btn-expand-font</button>
-            <button class="btn btn-shrink-font">btn-shrink-font</button>
+            <!-- <p class="font-editor">Font Options</p> -->
+            <button class="btn btn-increase-font">
+              <img
+                src="Assets\ICONS\increase-font.png"
+                alt="increase font button"
+              />
+            </button>
+            <button class="btn btn-decrease-font">
+              <img
+                src="Assets\ICONS\decrease-font.png"
+                alt="increase font button"
+              />
+            </button>
+            <button class="btn btn-align-left">
+              <img src="Assets\ICONS\align-left.png" alt="align left button" />
+            </button>
+            <button class="btn btn-align-center">
+              <img
+                src="Assets\ICONS\align-center.png"
+                alt="align center button"
+              />
+            </button>
+            <button class="btn btn-align-right">
+              <img
+                src="Assets\ICONS\align-right.png"
+                alt="align right button"
+              />
+            </button>
+            <div class="dropdown-container">
+              <select class="font-selector">
+                <option value="impact" selected>Impact</option>
+                <option value="ph-font">Placeholder</option>
+              </select>
+            </div>
+            <button class="btn btn-text-stroke">
+              <img
+                src="Assets\ICONS\text-stroke.png"
+                alt="text stroke button"
+              />
+            </button>
+            <button class="btn btn-text-stroke">
+              <img
+                src="Assets\ICONS\paint-board.png"
+                alt="color selector button"
+              />
+            </button>
           </div>
 
+          <div class="sticker-drawer"></div>
+
           <div class="canvas-output-buttons">
-            <p class="outputs">Save/Share your memes</p>
-            <button onclick="onClearCanvas()">Clear Canvas</button>
-            <button class="close" onclick="onCloseEditor()">
-              Close Editor
-            </button>
+            <button class="btnOutput btn download">Download</button>
+            <button class="btnOutput btn save">Save</button>
+            <button class="btnOutput btn share">Share</button>
           </div>
         </section>
       </div>
+      <button onclick="onClearCanvas()">Clear Canvas</button>
+      <button class="close" onclick="onCloseEditor()">Close Editor</button>
     </dialog>
     <!-- <button id="showDialog">Show the dialog</button> -->
     <script src="js/services/meme.service.js"></script>

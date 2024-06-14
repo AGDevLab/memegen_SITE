@@ -1,0 +1,8 @@
+:root {
+  --main-orange: #ff7f00;
+  --gallery-bg-white: #ffffff;
+  --editor-bg-gray: #e3e3e3;
+  --editor-btn-switch: url('Assets/ICONS/up-and-down.png');
+  --editor-btn-add: Assets/ICONS/add.png;
+  --editor-btn-delete: Assets/ICONS/trash.png;
+}
