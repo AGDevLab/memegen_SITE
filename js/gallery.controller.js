@@ -40,6 +40,7 @@ function onSelectImg(elImg) {
   console.log(elImg)
   console.log(elImg.dataset.id)
   console.log(elImg.dataset.keywords)
+  gMeme = setCurrMeme(+elImg.dataset.id)
 
   setImg(elImg)
   renderMeme()

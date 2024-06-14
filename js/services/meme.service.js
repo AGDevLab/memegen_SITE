@@ -2,6 +2,8 @@
 
 var gElCanvas
 var gCtx
+var gMemes
+var gCurrMeme
 
 var gMeme = {
   selectedImgId: 5,
@@ -28,15 +30,34 @@ var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 // console.log(gMemeText[0].size)
 
 function getMeme() {
-  // const memeInfo = gMeme.lines
-  // const src = elImg.src
-  // console.log(src)
-
-  // // const msgInput = prompt('input Text')
-  // const msgInput = memeInfo[0].txt
-  // renderMeme(src, msgInput)
-
   return gMeme
+}
+
+function setCurrMeme(imgId) {
+  const memes = getMemes()
+  const meme = memes.find((meme) => imgId === meme.selectedImgId)
+  console.log(meme)
+
+  return meme
+}
+
+function getMemes() {
+  const memes = gImgs.map(
+    (meme) =>
+      (meme = {
+        selectedImgId: meme.id,
+        selectedLineIdx: 0,
+        keywords: meme.keywords,
+        lines: [
+          {
+            txt: '',
+            size: 0,
+            color: 0,
+          },
+        ],
+      })
+  )
+  return memes
 }
 
 function renderMeme() {
