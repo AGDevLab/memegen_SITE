@@ -23,10 +23,6 @@ var gImgs = [
   { id: 18, url: 'img/18.jpg', keywords: ['politics', 'funny'] },
 ]
 
-function setImg() {
-  return gImgs
-}
-
 function getImgs() {
   return gImgs
 }
@@ -35,13 +31,17 @@ function renderGallery() {
   const imgGallery = getImgs()
   let strHtmls = imgGallery.map(
     (image) =>
-      `<img title="photo of ${image.keywords}" src="${image.url}" alt="Meme category: ${image.keywords}" onerror="this.src='assets/img/error.png'" onclick="onSelectImg(this)")"></article>`
+      `<img title="photo of ${image.keywords}" data-id="${image.id}" data-keywords="${image.keywords}" src="${image.url}" alt="Meme category: ${image.keywords}" onerror="this.src='assets/img/error.png'" onclick="onSelectImg(this)")"></article>`
   )
   document.querySelector('.gallery-container').innerHTML = strHtmls.join('')
 }
 
 function onSelectImg(elImg) {
-  coverCanvasWithImg(elImg)
+  console.log(elImg)
+  console.log(elImg.dataset.id)
+  console.log(elImg.dataset.keywords)
+
+  setImg(elImg)
   renderMeme()
 }
 

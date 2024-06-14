@@ -52,10 +52,6 @@ function renderMeme() {
   const elImg = new Image()
   elImg.src = src
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
-  const closeBtn = document.querySelector('.close')
-  closeBtn.addEventListener('click', () => {
-    memeEditor.close()
-  })
 }
 
 function setLineTxt() {
@@ -69,12 +65,19 @@ function setLineTxt() {
 
 function getMemeById(idx) {}
 
-function coverCanvasWithImg(elImg) {
+function setImg(elImg) {
   gElCanvas.width = elImg.naturalWidth
   gElCanvas.height = elImg.naturalHeight
 
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
 }
+
+// function coverCanvasWithImg(elImg) {
+//   gElCanvas.width = elImg.naturalWidth
+//   gElCanvas.height = elImg.naturalHeight
+
+//   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+// }
 
 function drawText(text, x, y) {
   gCtx.lineWidth = 2

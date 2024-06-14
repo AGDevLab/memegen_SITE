@@ -16,6 +16,14 @@ function onClearCanvas() {
   // gCtx.clearRect(0, 0, gElCanvas.width / 2, gElCanvas.height / 2)
 }
 
+function onCloseEditor() {
+  const memeEditor = document.querySelector('.editor')
+  const closeBtn = document.querySelector('.close')
+  closeBtn.addEventListener('click', () => {
+    memeEditor.close()
+  })
+}
+
 function resizeCanvas() {
   const elContainer = document.querySelector('canvas')
   //* Changing the canvas dimension clears the canvas
