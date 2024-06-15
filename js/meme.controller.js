@@ -65,20 +65,3 @@ function getCanvasCenter() {
 function onSetFilterBy(filterWords) {
   filterBy(filterWords.value.toLowerCase())
 }
-
-// function onSetFilterBy(inputElement) {
-//   const searchQuery = inputElement.value
-//   console.log('Search query:', searchQuery)
-//   // Handle the search query as needed
-// }
-
-// // const showButton = document.getElementById('showDialog')
-// // const editor = document.getElementById('.editor')
-// // const outputBox = document.querySelector('output')
-// // const selectEl = editor.querySelector('select')
-// // const confirmBtn = editor.querySelector('#confirmBtn')
-
-// // "Show the dialog" button opens the <dialog> modally
-// showButton.addEventListener('click', () => {
-//   editor.showModal()
-// })

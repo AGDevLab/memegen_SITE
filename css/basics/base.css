@@ -7,6 +7,9 @@
 
 html {
   margin: 0;
+  font-family: montserrat, serif;
+  color: var(--clr001);
+  line-height: 1.71428571;
 }
 
 body {
@@ -16,5 +19,15 @@ body {
 
 header,
 footer {
+  position: sticky;
   background-color: var(--main-orange);
+  z-index: 100;
+}
+
+header {
+  top: 0;
+}
+
+footer {
+  bottom: 0;
 }

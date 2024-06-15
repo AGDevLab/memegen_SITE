@@ -1,12 +1,19 @@
 .editor {
-  width: 1200px;
-  height: 600px;
   background-color: var(--editor-bg-gray);
 }
 
 canvas {
   border-radius: 2em;
 }
+
+/* .canvas-container {
+  width: 40vw;
+  padding: 20px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
 
 .editor-menu {
   display: grid;
@@ -96,7 +103,3 @@ canvas {
 .btnOutput.share {
   grid-column: 3;
 }
-
-/* dialog {
-  display: block;
-} */

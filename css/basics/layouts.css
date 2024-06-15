@@ -15,7 +15,8 @@
 
 .gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 150px));
+  /* grid-template-columns: repeat(auto-fit, minmax(60px, 150px)); */
+
   grid-auto-flow: dense;
   gap: 10px;
   margin-block: 20px;
@@ -27,12 +28,12 @@ img {
 }
 
 /* MAIN EDITOR */
-.editor-content {
+/* .editor-content {
   display: grid;
   grid-template-columns: minmax(500px, 1fr) 1fr;
-  /* grid-template-columns: 1fr 1fr; */
+
   gap: 20px;
-}
+} */
 
 /* .canvas-container {
   background-color: seashell;
