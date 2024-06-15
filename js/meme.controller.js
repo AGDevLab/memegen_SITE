@@ -63,7 +63,7 @@ function getCanvasCenter() {
 }
 
 function onSetFilterBy(filterWords) {
-  filterBy(filterWords.value)
+  filterBy(filterWords.value.toLowerCase())
 }
 
 // function onSetFilterBy(inputElement) {

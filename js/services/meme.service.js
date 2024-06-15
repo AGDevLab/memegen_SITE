@@ -17,18 +17,18 @@ var gMeme = {
     },
   ],
 }
-var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
-
-// function renderMeme() {
-//   gElCanvas = document.querySelector('canvas')
-//   gCtx = gElCanvas.getContext('2d')
-//   console.log('gCtx:', gCtx)
-// }
-// console.log(gMeme)
-// console.log(gMeme.lines)
-
-// var gMemeText = gMeme.lines
-// console.log(gMemeText[0].size)
+var gKeywordSearchCountMap = {
+  funny: 12,
+  cats: 16,
+  babies: 2,
+  dogs: 1,
+  politics: 1,
+  actors: 1,
+  angry: 1,
+  sarcasm: 1,
+  say: 1,
+  listen: 1,
+}
 
 function getMeme() {
   return gMeme
@@ -74,7 +74,10 @@ function renderMeme() {
   console.log(src)
 
   const memeEditor = document.querySelector('.editor')
+
   memeEditor.showModal()
+  const cancelFocusInput = document.querySelector('.text-input')
+  cancelFocusInput.blur()
   const elImg = new Image()
   elImg.src = src
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
