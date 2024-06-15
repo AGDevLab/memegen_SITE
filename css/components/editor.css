@@ -24,16 +24,18 @@ canvas {
   place-items: center;
 }
 
+/* Changed fixed width and height to relative sizing */
 .text-input {
-  width: 373px;
-  height: 60px;
+  width: 23.3125rem; /* Changed */
+  height: 3.75rem; /* Changed */
   border-radius: 12px;
   background-color: #ffffff;
 }
 
+/* Changed fixed width and height to relative sizing */
 .btn {
-  width: 60px;
-  height: 60px;
+  width: 3.75rem; /* Changed */
+  height: 3.75rem; /* Changed */
   border-radius: 12px;
   background-color: white;
 }
@@ -45,7 +47,7 @@ canvas {
   place-items: center;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(5, 1fr);
-  gap: 5px;
+  gap: 0.3125rem; /* Changed */
 }
 
 .dropdown-container {
@@ -54,15 +56,15 @@ canvas {
   justify-self: stretch;
 }
 
+/* Changed fixed width and height to relative sizing */
 .font-selector {
   grid-area: fs;
   width: 100%;
-  height: 60px;
+  height: 3.75rem; /* Changed */
   border-radius: 12px;
   background-color: white;
   border: none;
-
-  font-size: 16px;
+  font-size: 1rem; /* Changed */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -74,16 +76,16 @@ canvas {
 .canvas-output-buttons {
   display: grid;
   grid-template-columns: repeat(3, 1.5fr);
-  gap: 10px;
+  gap: 0.625rem; /* Changed */
   place-items: center;
 }
 
 /* Button styles for output buttons */
+/* Changed fixed width to relative sizing */
 .btnOutput {
   background-color: var(--main-orange);
-  width: 90px;
+  width: 5.625rem; /* Changed */
   color: white;
-
   border-radius: 12px;
   display: flex;
   align-items: center;

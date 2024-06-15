@@ -10,9 +10,11 @@ html {
   font-family: montserrat, serif;
   color: var(--clr001);
   line-height: 1.71428571;
+  margin: 0;
 }
 
 body {
+  margin: 0;
   background-color: var(--gallery-bg-gray);
   text-align: center;
 }
