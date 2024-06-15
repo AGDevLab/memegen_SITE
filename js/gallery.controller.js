@@ -2,7 +2,7 @@
 
 // funny cats babies dogs politics actors angry sarcasm say listen
 
-var gImgs = [
+const gImgs = [
   {
     id: 1,
     url: 'Assets/IMAGES/fixed_img/1.jpg',
@@ -72,7 +72,19 @@ var gImgs = [
 ]
 
 function getImgs() {
-  return gImgs
+  if (gFilterBy) {
+    return setImgs(gFilterBy)
+  } else return gImgs
+}
+
+function setImgs(filterBy) {
+  let images = gImgs
+  const searchFilter = filterBy
+
+  images = images.filter((image) =>
+    searchFilter.some((filter) => image.id === filter.selectedImgId)
+  )
+  return images
 }
 
 function renderGallery() {

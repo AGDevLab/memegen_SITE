@@ -62,6 +62,16 @@ function getCanvasCenter() {
   }
 }
 
+function onSetFilterBy(filterWords) {
+  filterBy(filterWords.value)
+}
+
+// function onSetFilterBy(inputElement) {
+//   const searchQuery = inputElement.value
+//   console.log('Search query:', searchQuery)
+//   // Handle the search query as needed
+// }
+
 // // const showButton = document.getElementById('showDialog')
 // // const editor = document.getElementById('.editor')
 // // const outputBox = document.querySelector('output')

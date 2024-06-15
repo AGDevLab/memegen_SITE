@@ -21,7 +21,11 @@
       </div>
     </header>
     <div class="gallery-menu">
-      <input type="search" />
+      <input
+        type="search"
+        placeholder="Search..."
+        oninput="onSetFilterBy(this)"
+      />
     </div>
     <section class="gallery-container">
       <img

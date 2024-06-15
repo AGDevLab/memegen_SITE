@@ -4,6 +4,7 @@ var gElCanvas
 var gCtx
 var gMemes
 var gCurrMeme
+var gFilterBy
 
 var gMeme = {
   selectedImgId: 5,
@@ -77,6 +78,16 @@ function renderMeme() {
   const elImg = new Image()
   elImg.src = src
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
+}
+
+function filterBy(elFilterWords) {
+  const memes = gMemes
+  gFilterBy = memes.filter((meme) =>
+    meme.keywords.some((keyword) => keyword.includes(elFilterWords))
+  )
+
+  setImgs(gFilterBy)
+  renderGallery()
 }
 
 function setLineTxt() {
