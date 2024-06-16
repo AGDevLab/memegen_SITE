@@ -1,6 +1,6 @@
 'use strict'
 
-// funny cats babies dogs politics actors angry sarcasm say listen
+// keywords: funny cats babies dogs politics actors angry sarcasm say listen
 
 const gImgs = [
   {
@@ -97,11 +97,11 @@ function renderGallery() {
 }
 
 function onSelectImg(elImg) {
-  console.log(elImg)
-  console.log(elImg.dataset.id)
-  console.log(elImg.dataset.keywords)
+  // console.log(elImg)
+  // console.log(elImg.dataset.id)
+  // console.log(elImg.dataset.keywords)
   gMeme = setCurrMeme(+elImg.dataset.id)
-  console.log(elImg.src)
+  // console.log(elImg.src)
 
   gCurrImgUrl = elImg.dataset.url
 

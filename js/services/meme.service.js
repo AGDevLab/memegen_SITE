@@ -1,5 +1,6 @@
 'use strict'
 
+const STORAGE_KEY = 'memesDB'
 var gElCanvas
 var gCtx
 var gMemes
@@ -18,6 +19,7 @@ var gMeme = {
     },
   ],
 }
+
 var gKeywordSearchCountMap = {
   funny: 12,
   cats: 16,
@@ -38,7 +40,7 @@ function getMeme() {
 function setCurrMeme(imgId) {
   const memes = getMemes()
   const meme = memes.find((meme) => imgId === meme.selectedImgId)
-  console.log(meme)
+  // console.log(meme)
 
   return meme
 }
@@ -72,7 +74,7 @@ function renderMeme() {
   const msgInput = memeInfo[0].txt
 
   const src = gImgs[0].url
-  console.log(src)
+  // console.log(src)
 
   const memeEditor = document.querySelector('.editor')
 
@@ -82,6 +84,7 @@ function renderMeme() {
   const elImg = new Image()
   elImg.src = src
   drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
+  saveMeme()
 }
 
 function filterBy(elFilterWords) {
@@ -99,11 +102,9 @@ function setLineTxt() {
   const meme = getMeme()
   const memeInfo = meme.lines
   memeInfo[0].txt = inputField.value
-  console.log(memeInfo[0].txt)
+  // console.log(memeInfo[0].txt)
   renderMeme()
 }
-
-function getMemeById(idx) {}
 
 function setImg(elImg) {
   gElCanvas.width = elImg.naturalWidth
@@ -112,13 +113,6 @@ function setImg(elImg) {
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
   // resizeCanvas()
 }
-
-// function coverCanvasWithImg(elImg) {
-//   gElCanvas.width = elImg.naturalWidth
-//   gElCanvas.height = elImg.naturalHeight
-
-//   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-// }
 
 function drawText(text, x, y) {
   gCtx.lineWidth = 2

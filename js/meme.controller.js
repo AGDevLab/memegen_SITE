@@ -12,8 +12,6 @@ function onInit() {
 
 function onClearCanvas() {
   gCtx.clearRect(0, 0, gElCanvas.width, gElCanvas.height)
-  //* We may clear part of the canvas
-  // gCtx.clearRect(0, 0, gElCanvas.width / 2, gElCanvas.height / 2)
 }
 
 function onCloseEditor() {
@@ -42,7 +40,7 @@ function resizeCanvas() {
   offScreenCtx.putImageData(imageData, 0, 0)
 
   // Resize the canvas
-  gElCanvas.width = elContainer.clientWidth - 40 // Adjust for padding
+  gElCanvas.width = elContainer.clientWidth - 40
   gElCanvas.height = elContainer.clientHeight - 40
 
   // Draw the saved content to the resized canvas
@@ -57,16 +55,13 @@ function resizeCanvas() {
     gElCanvas.width,
     gElCanvas.height
   )
-
-  // Optionally, re-render the image if needed
-  // renderImg(gCurrImgUrl);
 }
 
 // function onDraw(ev) {
 //   // const offsetX = ev.offsetX
 //   // const offsetY = ev.offsetY
 //   const { offsetX, offsetY } = ev
-//   // console.log('offsetX, offsetY:', offsetX, offsetY)
+//   // ('offsetX, offsetY:', offsetX, offsetY)
 
 //   switch (gCurrShape) {
 //     case 'line':

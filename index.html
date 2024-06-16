@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="css/styles.css" />
     <title>memeGen</title>
   </head>
-  <!-- <body> -->
   <body class="main-layout" onload="onInit()">
     <header class="main-header main-layout full">
       <div class="header-content">
@@ -131,7 +130,12 @@
           <div class="sticker-drawer"></div>
 
           <div class="canvas-output-buttons">
-            <button class="btnOutput btn download">Download</button>
+            <button
+              onclick="downloadCanvas(this)"
+              class="btnOutput btn download"
+            >
+              Download
+            </button>
             <button class="btnOutput btn save">Save</button>
             <button class="btnOutput btn share">Share</button>
           </div>
@@ -140,7 +144,9 @@
       <button onclick="onClearCanvas()">Clear Canvas</button>
       <button class="close" onclick="onCloseEditor()">Close Editor</button>
     </dialog>
-    <!-- <button id="showDialog">Show the dialog</button> -->
+
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/util.service.js"></script>
     <script src="js/services/meme.service.js"></script>
     <script src="js/gallery.controller.js"></script>
     <script src="js/meme.controller.js"></script>
