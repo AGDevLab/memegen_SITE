@@ -2,22 +2,22 @@
 
 const STORAGE_KEY = 'memesDB'
 let gElCanvas, gCtx, gMemes, gCurrMeme, gFilterBy, gCurrImgUrl, gColor
-// gColor = '#ff0000'
+
 let gStroke = true
 
-var gMeme = {
-  selectedImgId: 5,
-  selectedLineIdx: 0,
-  lines: [
-    {
-      txt: 'I sometimes eat Falafel',
-      size: 20,
-      color: 'red',
-    },
-  ],
-}
+// let gMeme = {
+//   selectedImgId: 5,
+//   selectedLineIdx: 0,
+//   lines: [
+//     {
+//       txt: 'I sometimes eat Falafel',
+//       size: 20,
+//       color: 'red',
+//     },
+//   ],
+// }
 
-var gKeywordSearchCountMap = {
+let gKeywordSearchCountMap = {
   funny: 12,
   cats: 16,
   babies: 2,
@@ -151,14 +151,14 @@ function setStroke() {
 }
 
 function openColorPicker() {
-  var colorPickerInput = document.getElementById('colorPickerInput')
+  let colorPickerInput = document.getElementById('colorPickerInput')
 
   colorPickerInput.click()
 
   colorPickerInput.addEventListener('input', function () {
     gColor = colorPickerInput.value
 
-    var colorPickerImg = document.querySelector('.color-picker-img')
+    let colorPickerImg = document.querySelector('.color-picker-img')
     colorPickerImg.style.backgroundColor = gColor
   })
 }
