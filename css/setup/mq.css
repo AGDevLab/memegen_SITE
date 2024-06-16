@@ -3,6 +3,7 @@
   .gallery-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 2em;
   }
 
   .search-gallery {
@@ -60,7 +61,7 @@
     justify-content: center;
   }
   .gallery-menu h6 {
-    font-size: 1em;
+    font-size: 2em;
   }
 
   .search-gallery {

@@ -12,6 +12,14 @@
 }
 
 img {
-  border-radius: 10px;
+  border-radius: 0.625rem;
   width: 100%;
+  box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.3), 0 0 0.5em rgba(255, 166, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0.75em 1.5em rgba(0, 0, 0, 0.4),
+    0 0 1em rgba(255, 166, 0, 0.582);
 }
