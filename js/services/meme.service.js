@@ -1,12 +1,9 @@
 'use strict'
 
 const STORAGE_KEY = 'memesDB'
-var gElCanvas
-var gCtx
-var gMemes
-var gCurrMeme
-var gFilterBy
-var gCurrImgUrl
+let gElCanvas, gCtx, gMemes, gCurrMeme, gFilterBy, gCurrImgUrl, gColor
+// gColor = '#ff0000'
+let gStroke = true
 
 var gMeme = {
   selectedImgId: 5,
@@ -54,11 +51,12 @@ function setMemes() {
     (meme) =>
       (meme = {
         selectedImgId: meme.id,
+        lineCount: 0,
         selectedLineIdx: 0,
         keywords: meme.keywords,
         lines: [
           {
-            txt: '',
+            txt: [],
             size: 0,
             color: 0,
           },
@@ -68,22 +66,38 @@ function setMemes() {
   return memes
 }
 
+// function renderMeme() {
+//   const meme = getMeme()
+//   const memeInfo = meme.lines
+//   const msgInput = memeInfo[0].txt
+
+//   const memeEditor = document.querySelector('.editor')
+
+//   memeEditor.showModal()
+//   const cancelFocusInput = document.querySelector('.text-input')
+//   cancelFocusInput.blur()
+
+//   if (meme.lineCount === 0) {
+//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 6)
+//     console.log('text1')
+//   } else if (meme.lineCount === 1) {
+//     console.log('text2')
+//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 4)
+//   } else if (meme.lineCount === 2) {
+//     console.log('text3')
+//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
+//   }
+
+//   saveMeme()
+// }
+
 function renderMeme() {
-  const meme = getMeme()
-  const memeInfo = meme.lines
-  const msgInput = memeInfo[0].txt
-
-  const src = gImgs[0].url
-  // console.log(src)
-
   const memeEditor = document.querySelector('.editor')
-
   memeEditor.showModal()
   const cancelFocusInput = document.querySelector('.text-input')
   cancelFocusInput.blur()
-  const elImg = new Image()
-  elImg.src = src
-  drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
+  getText()
+
   saveMeme()
 }
 
@@ -101,9 +115,34 @@ function setLineTxt() {
   let inputField = document.querySelector('.text-input')
   const meme = getMeme()
   const memeInfo = meme.lines
-  memeInfo[0].txt = inputField.value
+  console.log(meme.lineCount)
+
+  if (!meme.lineCount) {
+    memeInfo[0].txt.push(inputField.value)
+    meme.lineCount++
+  } else if (meme.lineCount <= 3) {
+    memeInfo[0].txt.push(inputField.value)
+    meme.lineCount++
+  }
+  // memeInfo[0].txt = inputField.value
   // console.log(memeInfo[0].txt)
   renderMeme()
+}
+
+function getText() {
+  const meme = getMeme()
+  const memeInfo = meme.lines
+  const msgInput = memeInfo[0].txt
+  console.log(msgInput.length)
+
+  const yPositions = [6, 3, 2]
+  const totalLines = Math.min(msgInput.length, yPositions.length)
+
+  msgInput.slice(0, totalLines).forEach((msg, idx) => {
+    const yPos = gElCanvas.height / yPositions[idx]
+    drawText(msg, gElCanvas.width / 2, yPos)
+    console.log(idx)
+  })
 }
 
 function setImg(elImg) {
@@ -115,12 +154,61 @@ function setImg(elImg) {
 }
 
 function drawText(text, x, y) {
-  gCtx.lineWidth = 2
+  gCtx.lineWidth = 3
   gCtx.strokeStyle = 'green'
-  gCtx.fillStyle = 'white'
-  gCtx.font = '40px Arial'
+  gCtx.fillStyle = gColor ? gColor : 'white'
+  gCtx.font = '80px Arial'
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
   gCtx.fillText(text, x, y)
-  gCtx.strokeText(text, x, y)
+  if (gStroke) gCtx.strokeText(text, x, y)
+}
+
+function triggerColorPicker() {
+  console.log('triggerColorPicker')
+
+  document.getElementById('favcolor').click()
+}
+
+// function selectColor() {
+//   console.log('selectColor')
+
+//   const color = document.getElementById('favcolor').value
+//   gColor = color
+//   drawText('Hello World', 400, 300) // Example text and position
+//   document.getElementById('colorPickerButton').style.backgroundColor = gColor
+// }
+
+// function selectColor() {
+//   var selectedColor = '#ff0000' // Example: red color
+
+//   gColor = selectedColor
+
+//   var colorPickerImg = document.querySelector('.color-picker-img')
+//   colorPickerImg.style.filter = 'hue-rotate(100deg)' // Example:
+// }
+
+function setStroke() {
+  gStroke = !gStroke
+  if (!gStroke) {
+    const btnStrokeBg = document.querySelector('.btn-text-stroke')
+    btnStrokeBg.style.backgroundColor = 'black'
+  } else {
+    const btnStrokeBg = document.querySelector('.btn-text-stroke')
+    btnStrokeBg.style.backgroundColor = 'white'
+  }
+  return gStroke
+}
+
+function openColorPicker() {
+  var colorPickerInput = document.getElementById('colorPickerInput')
+
+  colorPickerInput.click()
+
+  colorPickerInput.addEventListener('input', function () {
+    gColor = colorPickerInput.value
+
+    var colorPickerImg = document.querySelector('.color-picker-img')
+    colorPickerImg.style.backgroundColor = gColor
+  })
 }

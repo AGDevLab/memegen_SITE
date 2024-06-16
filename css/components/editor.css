@@ -96,3 +96,33 @@ canvas {
 .btnOutput.share {
   grid-column: 3;
 }
+
+/* .btn-text-stroke img {
+  width: 50px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 0.3s;
+}
+#colorPickerContainer {
+  position: absolute;
+  left: -9999px;
+} */
+
+/* Add styles for color picker button */
+/* .color-picker-btn {
+  position: relative;
+} */
+
+.color-picker-img {
+  /* Add any existing styles */
+  transition: filter 0.3s ease; /* Transition for smooth color change */
+  cursor: pointer; /* Change cursor to indicate clickable */
+  background-color: var(--gallery-bg-white);
+}
+
+#colorPickerInput {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0; /* Hide the actual input */
+}

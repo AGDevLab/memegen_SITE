@@ -44,9 +44,12 @@
         </form>
         <section class="editor-menu">
           <div class="meme-input-editor">
-            <div class="input-field">
-              <input type="text" class="text-input" placeholder="Enter text" />
-            </div>
+            <form id="textInputForm" onsubmit="setLineTxt(); return false;">
+              <div class="input-field">
+                <input type="text" class="text-input" placeholder="Enter text" id="textInput">
+                <button type="submit" style="display: none;"></button>
+              </div>
+            </form>
             <div class="input-buttons">
               <p>add text, download and save working at the moment</p>
               <button class="btn switch-line">
@@ -108,19 +111,31 @@
                 <option value="ph-font">Placeholder</option>
               </select>
             </div>
-            <button class="btn btn-text-stroke">
+            <button class="btn btn-text-stroke" onclick="setStroke()">
               <img
                 src="Assets\ICONS\text-stroke.png"
                 alt="text stroke button"
               />
             </button>
+<!-- 
             <button class="btn btn-text-stroke">
               <img
                 src="Assets\ICONS\paint-board.png"
                 alt="color selector button"
               />
+            </button> -->
+
+            <button
+              class="btn color-picker-btn"
+              onclick="openColorPicker()"
+            >
+              <img
+                src="Assets\ICONS\paint-board.png"
+                alt="color selector button"
+                class="color-picker-img"
+              />
+              <input type="color" id="colorPickerInput" style="display: none" />
             </button>
-          </div>
 
           <div class="sticker-drawer"></div>
 
