@@ -18,8 +18,8 @@
   display: grid;
 
   grid-auto-flow: dense;
-  gap: 1.625rem;
-  margin-block: 1.25rem;
+  /* gap: 1.625rem; */
+  /* margin-block: 2rem; */
 }
 
 img {

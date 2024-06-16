@@ -14,6 +14,10 @@
     border: none;
   }
 
+  .gallery-menu h6 {
+    font-size: 0.7em;
+  }
+
   .editor {
     background-color: var(--gallery-bg-gray);
     border: none;
@@ -55,6 +59,9 @@
 
     justify-content: center;
   }
+  .gallery-menu h6 {
+    font-size: 1em;
+  }
 
   .search-gallery {
     text-align: center;
@@ -71,6 +78,7 @@
     left: 1rem;
     max-height: calc(100vh - 10.625rem);
     width: 100vw;
+    height: 81vh;
   }
 
   .editor-content {
