@@ -5,6 +5,7 @@ var gCtx
 var gMemes
 var gCurrMeme
 var gFilterBy
+var gCurrImgUrl
 
 var gMeme = {
   selectedImgId: 5,
@@ -109,6 +110,7 @@ function setImg(elImg) {
   gElCanvas.height = elImg.naturalHeight
 
   gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
+  // resizeCanvas()
 }
 
 // function coverCanvasWithImg(elImg) {

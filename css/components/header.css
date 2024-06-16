@@ -5,14 +5,14 @@
   justify-content: center;
   align-items: center;
 
-  height: 73px;
+  height: 4.5625em;
 }
 
 .logo {
   /* Layer 2 */
 
-  width: 133px;
-  height: 22px;
+  width: 8.3125em;
+  height: 1.375em;
 }
 
 /* .main-nav ul {

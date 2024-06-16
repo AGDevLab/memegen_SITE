@@ -91,7 +91,7 @@ function renderGallery() {
   const imgGallery = getImgs()
   let strHtmls = imgGallery.map(
     (image) =>
-      `<img title="photo of ${image.keywords}" data-id="${image.id}" data-keywords="${image.keywords}" src="${image.url}" alt="Meme category: ${image.keywords}" onerror="this.src='Assets/IMAGES/util/returnnull.jpg'" onclick="onSelectImg(this)")"></article>`
+      `<img title="photo of ${image.keywords}" data-id="${image.id}" data-keywords="${image.keywords}" data-url="${image.url}" src="${image.url}" alt="Meme category: ${image.keywords}" onerror="this.src='Assets/IMAGES/util/returnnull.jpg'" onclick="onSelectImg(this)")"></article>`
   )
   document.querySelector('.gallery-container').innerHTML = strHtmls.join('')
 }
@@ -101,9 +101,13 @@ function onSelectImg(elImg) {
   console.log(elImg.dataset.id)
   console.log(elImg.dataset.keywords)
   gMeme = setCurrMeme(+elImg.dataset.id)
+  console.log(elImg.src)
+
+  gCurrImgUrl = elImg.dataset.url
 
   setImg(elImg)
   renderMeme()
+  resizeCanvas()
 }
 
 function onImgInput(ev) {

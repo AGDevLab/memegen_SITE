@@ -7,32 +7,47 @@
 
   /* Changed fixed top and height to relative sizing */
   .editor {
+    background-color: var(--gallery-bg-gray);
+    border: none;
     top: 4.5625rem; /* Changed */
-    height: calc(80vh - 7.5rem); /* Changed */
+    padding-block-start: 1rem;
+
     width: 100vw;
+    height: 83vh;
+    overflow: hidden; /* Prevents overflow */
+    max-width: max-content;
   }
 
   .editor-content {
+    justify-content: center;
     display: grid;
+    overflow: auto;
     grid-template-rows: 1fr 1fr;
     /* grid-template-columns: 1fr 1fr; */
     gap: 1.25rem; /* Changed */
+    height: 100%;
+  }
+
+  .canvas-container {
+    place-self: center;
+    max-width: 400px;
+    max-height: 400px;
   }
 }
 
 /* SMALL 400 */
-@media (min-width: 400px) {
+@media (min-width: 600px) {
   .gallery-container {
-    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    z-index: 50;
   }
 
   /* Changed fixed top and height to relative sizing */
   .editor {
+    border: none;
     top: 4.5625rem; /* Changed */
-    height: calc(100vh - 10.625rem); /* Changed */
+    left: 1rem; /* Changed */
+    max-height: calc(100vh - 10.625rem); /* Changed */
     width: 100vw;
   }
 
@@ -41,5 +56,11 @@
     /* grid-template-columns: minmax(500px, 1fr) 1fr; */
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem; /* Changed */
+  }
+
+  .canvas-container {
+    place-self: center;
+    max-width: 600px;
+    max-height: 600px;
   }
 }

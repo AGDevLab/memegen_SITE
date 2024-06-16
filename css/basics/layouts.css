@@ -1,7 +1,7 @@
 .main-layout {
   display: grid;
-  /* Changed fixed widths to relative sizing */
-  grid-template-columns: 1.25rem 1fr 1.25rem; /* Changed */
+
+  grid-template-columns: 1.25rem 1fr 1.25rem;
 }
 
 .main-layout > *:not(.full) {
@@ -16,28 +16,13 @@
 
 .gallery-container {
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(60px, 150px)); */
 
   grid-auto-flow: dense;
-  gap: 0.625rem; /* Changed */
-  margin-block: 1.25rem; /* Changed */
+  gap: 0.625rem;
+  margin-block: 1.25rem;
 }
 
 img {
-  border-radius: 0.625rem; /* Changed */
+  border-radius: 0.625rem;
   width: 100%;
 }
-
-/* MAIN EDITOR */
-/* .editor-content {
-  display: grid;
-  grid-template-columns: minmax(500px, 1fr) 1fr;
-
-  gap: 20px;
-} */
-
-/* .canvas-container {
-  background-color: seashell;
-  border-radius: 2em;
-  border: 1px solid black;
-} */

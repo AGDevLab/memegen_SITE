@@ -25,9 +25,41 @@ function onCloseEditor() {
 }
 
 function resizeCanvas() {
-  const elContainer = document.querySelector('canvas')
-  //* Changing the canvas dimension clears the canvas
-  gElCanvas.width = elContainer.clientWidth - 40 //* Subtracting 20px padding from each side
+  // gElCanvas = document.querySelector('canvas')
+  // gCtx = gElCanvas.getContext('2d')
+
+  // Save the current canvas content
+  const elContainer = document.querySelector('.canvas-container')
+  const oldWidth = gElCanvas.width
+  const oldHeight = gElCanvas.height
+  const imageData = gCtx.getImageData(0, 0, oldWidth, oldHeight)
+
+  // Create an off-screen canvas to hold the old content
+  const offScreenCanvas = document.createElement('canvas')
+  const offScreenCtx = offScreenCanvas.getContext('2d')
+  offScreenCanvas.width = oldWidth
+  offScreenCanvas.height = oldHeight
+  offScreenCtx.putImageData(imageData, 0, 0)
+
+  // Resize the canvas
+  gElCanvas.width = elContainer.clientWidth - 40 // Adjust for padding
+  gElCanvas.height = elContainer.clientHeight - 40
+
+  // Draw the saved content to the resized canvas
+  gCtx.drawImage(
+    offScreenCanvas,
+    0,
+    0,
+    oldWidth,
+    oldHeight,
+    0,
+    0,
+    gElCanvas.width,
+    gElCanvas.height
+  )
+
+  // Optionally, re-render the image if needed
+  // renderImg(gCurrImgUrl);
 }
 
 // function onDraw(ev) {
@@ -64,4 +96,12 @@ function getCanvasCenter() {
 
 function onSetFilterBy(filterWords) {
   filterBy(filterWords.value.toLowerCase())
+}
+
+function renderImg(src = 'Assets/IMAGES/fixed_img/1.jpg') {
+  const elImg = new Image()
+  elImg.src = src
+  console.log(elImg)
+
+  setImg(elImg)
 }

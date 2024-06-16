@@ -6,15 +6,6 @@ canvas {
   border-radius: 2em;
 }
 
-/* .canvas-container {
-  width: 40vw;
-  padding: 20px;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
 .editor-menu {
   display: grid;
 }

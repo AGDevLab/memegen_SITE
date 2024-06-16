@@ -3,12 +3,12 @@
 * {
   box-sizing: border-box;
   margin: 0;
+  padding: 0;
 }
 
 html {
   margin: 0;
   font-family: montserrat, serif;
-  color: var(--clr001);
   line-height: 1.71428571;
   margin: 0;
 }
@@ -23,7 +23,6 @@ header,
 footer {
   position: sticky;
   background-color: var(--main-orange);
-  z-index: 100;
 }
 
 header {
