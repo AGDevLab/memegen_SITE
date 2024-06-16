@@ -112,3 +112,13 @@ function onSelectImg(elImg) {
 function onImgInput(ev) {
   loadImageFromInput(ev, renderImg)
 }
+
+function onSetFont() {
+  const font = document.querySelector('.font-selector').value
+
+  gFont = `60px ${font}`
+  console.log(gFont)
+
+  // const elShapeTitle = document.querySelector('.shape-title')
+  // elShapeTitle.innerText = capitalize(gCurrShape)
+}

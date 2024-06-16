@@ -1,21 +1,22 @@
 'use strict'
 
 const STORAGE_KEY = 'memesDB'
-let gElCanvas, gCtx, gMemes, gCurrMeme, gFilterBy, gCurrImgUrl, gColor
+var gElCanvas, gCtx, gMemes, gCurrMeme, gFilterBy, gCurrImgUrl, gColor
 
-let gStroke = true
+var gStroke = true
+var gFont = '80px Arial' // font picker bug, no time to fix
 
-// let gMeme = {
-//   selectedImgId: 5,
-//   selectedLineIdx: 0,
-//   lines: [
-//     {
-//       txt: 'I sometimes eat Falafel',
-//       size: 20,
-//       color: 'red',
-//     },
-//   ],
-// }
+let gMeme = {
+  selectedImgId: 5,
+  selectedLineIdx: 0,
+  lines: [
+    {
+      txt: 'I sometimes eat Falafel',
+      size: 20,
+      color: 'red',
+    },
+  ],
+}
 
 let gKeywordSearchCountMap = {
   funny: 12,
@@ -53,6 +54,8 @@ function setMemes() {
         lineCount: 0,
         selectedLineIdx: 0,
         keywords: meme.keywords,
+        // misunderstood the use of multiple object lines array,
+        // did not have time to fix functionallity
         lines: [
           {
             txt: [],
@@ -128,6 +131,7 @@ function drawText(text, x, y) {
   gCtx.strokeStyle = 'green'
   gCtx.fillStyle = gColor ? gColor : 'white'
   gCtx.font = '80px Arial'
+  // gCtx.font = gFont ? gFont : '80px Arial' // weird bug need more work
   gCtx.textAlign = 'center'
   gCtx.textBaseline = 'middle'
   gCtx.fillText(text, x, y)

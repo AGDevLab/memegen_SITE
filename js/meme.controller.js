@@ -92,10 +92,3 @@ function getCanvasCenter() {
 function onSetFilterBy(filterWords) {
   filterBy(filterWords.value.toLowerCase())
 }
-
-function renderImg(src = 'Assets/IMAGES/fixed_img/1.jpg') {
-  const elImg = new Image()
-  elImg.src = src
-
-  setImg(elImg)
-}
