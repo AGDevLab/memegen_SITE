@@ -66,8 +66,8 @@ canvas {
 /* Main canvas output buttons container */
 .canvas-output-buttons {
   display: grid;
-  grid-template-columns: repeat(3, 1.5fr);
-  gap: 0.625rem; /* Changed */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.625em; /* Changed */
   place-items: center;
 }
 
@@ -95,6 +95,10 @@ canvas {
 
 .btnOutput.share {
   grid-column: 3;
+}
+
+.btnOutput.close {
+  grid-column: 4;
 }
 
 /* .btn-text-stroke img {

@@ -48,6 +48,12 @@
   .gallery-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    padding: 4vw;
+    grid-auto-flow: dense;
+    gap: 4vw;
+    margin-block: 20px;
+
+    justify-content: center;
   }
 
   .search-gallery {
