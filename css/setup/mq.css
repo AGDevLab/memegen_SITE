@@ -5,16 +5,24 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  /* Changed fixed top and height to relative sizing */
+  .search-gallery {
+    text-align: center;
+
+    width: 10rem;
+    height: 2rem;
+    border-radius: 1em;
+    border: none;
+  }
+
   .editor {
     background-color: var(--gallery-bg-gray);
     border: none;
-    top: 4.5625rem; /* Changed */
+    top: 4.5625rem;
     padding-block-start: 1rem;
 
     width: 100vw;
     height: 83vh;
-    overflow: hidden; /* Prevents overflow */
+    overflow: hidden;
     max-width: max-content;
   }
 
@@ -23,8 +31,8 @@
     display: grid;
     overflow: auto;
     grid-template-rows: 1fr 1fr;
-    /* grid-template-columns: 1fr 1fr; */
-    gap: 1.25rem; /* Changed */
+
+    gap: 1.25rem;
     height: 100%;
   }
 
@@ -42,20 +50,28 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  /* Changed fixed top and height to relative sizing */
+  .search-gallery {
+    text-align: center;
+    font-size: 1.4em;
+    width: 20rem;
+    height: 4rem;
+    border-radius: 1em;
+    border: none;
+  }
+
   .editor {
     border: none;
-    top: 4.5625rem; /* Changed */
-    left: 1rem; /* Changed */
-    max-height: calc(100vh - 10.625rem); /* Changed */
+    top: 4.5625rem;
+    left: 1rem;
+    max-height: calc(100vh - 10.625rem);
     width: 100vw;
   }
 
   .editor-content {
     display: grid;
-    /* grid-template-columns: minmax(500px, 1fr) 1fr; */
+
     grid-template-columns: 1fr 1fr;
-    gap: 1.25rem; /* Changed */
+    gap: 1.25rem;
   }
 
   .canvas-container {

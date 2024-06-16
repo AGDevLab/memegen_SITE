@@ -3,11 +3,6 @@
 function saveMeme() {
   gElCanvas = document.querySelector('canvas')
   const dataUrl = gElCanvas.toDataURL()
-  //   console.log('dataUrl:', dataUrl)
-
-  //   const link = document.createElement('a')
-  //   link.href = dataUrl
-  console.log('saved')
 
   saveToStorage('savedMeme', dataUrl)
 }
@@ -15,7 +10,6 @@ function saveMeme() {
 function downloadCanvas() {
   gElCanvas = document.querySelector('canvas')
   const dataUrl = gElCanvas.toDataURL()
-  //   console.log('dataUrl:', dataUrl)
 
   const link = document.createElement('a')
   link.href = dataUrl

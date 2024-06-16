@@ -20,14 +20,13 @@
       </div>
     </header>
     <div class="gallery-menu">
-      <input
+      <input class="search-gallery"
         type="search"
         placeholder="Search..."
         oninput="onSetFilterBy(this)"
       />
       <h6>
-        keywords: funny cats babies dogs politics actors angry sarcasm say
-        listen
+        keywords: funny, cats, babies, dogs, politics, actors, angry, sarcasm, say, listen.
       </h6>
     </div>
     <section class="gallery-container"></section>
@@ -51,7 +50,7 @@
               </div>
             </form>
             <div class="input-buttons">
-              <p>add text, download and save working at the moment</p>
+              <p>working features: add line, stroke, colorpicker, download and save</p>
               <button class="btn switch-line">
                 <img
                   src="Assets/ICONS/up-and-down.png"
@@ -151,6 +150,7 @@
           </div>
         </section>
       </div>
+      <!-- DEBUG BUTTONS -->
       <button onclick="onClearCanvas()">Clear Canvas</button>
       <button class="close" onclick="onCloseEditor()">Close Editor</button>
     </dialog>

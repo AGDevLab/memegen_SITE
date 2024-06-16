@@ -96,7 +96,6 @@ function onSetFilterBy(filterWords) {
 function renderImg(src = 'Assets/IMAGES/fixed_img/1.jpg') {
   const elImg = new Image()
   elImg.src = src
-  console.log(elImg)
 
   setImg(elImg)
 }

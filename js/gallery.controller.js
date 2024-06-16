@@ -101,7 +101,6 @@ function onSelectImg(elImg) {
   // console.log(elImg.dataset.id)
   // console.log(elImg.dataset.keywords)
   gMeme = setCurrMeme(+elImg.dataset.id)
-  // console.log(elImg.src)
 
   gCurrImgUrl = elImg.dataset.url
 

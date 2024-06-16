@@ -37,7 +37,6 @@ function getMeme() {
 function setCurrMeme(imgId) {
   const memes = getMemes()
   const meme = memes.find((meme) => imgId === meme.selectedImgId)
-  // console.log(meme)
 
   return meme
 }
@@ -66,31 +65,6 @@ function setMemes() {
   return memes
 }
 
-// function renderMeme() {
-//   const meme = getMeme()
-//   const memeInfo = meme.lines
-//   const msgInput = memeInfo[0].txt
-
-//   const memeEditor = document.querySelector('.editor')
-
-//   memeEditor.showModal()
-//   const cancelFocusInput = document.querySelector('.text-input')
-//   cancelFocusInput.blur()
-
-//   if (meme.lineCount === 0) {
-//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 6)
-//     console.log('text1')
-//   } else if (meme.lineCount === 1) {
-//     console.log('text2')
-//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 4)
-//   } else if (meme.lineCount === 2) {
-//     console.log('text3')
-//     drawText(msgInput, gElCanvas.width / 2, gElCanvas.height / 2)
-//   }
-
-//   saveMeme()
-// }
-
 function renderMeme() {
   const memeEditor = document.querySelector('.editor')
   memeEditor.showModal()
@@ -115,7 +89,6 @@ function setLineTxt() {
   let inputField = document.querySelector('.text-input')
   const meme = getMeme()
   const memeInfo = meme.lines
-  console.log(meme.lineCount)
 
   if (!meme.lineCount) {
     memeInfo[0].txt.push(inputField.value)
@@ -124,8 +97,7 @@ function setLineTxt() {
     memeInfo[0].txt.push(inputField.value)
     meme.lineCount++
   }
-  // memeInfo[0].txt = inputField.value
-  // console.log(memeInfo[0].txt)
+
   renderMeme()
 }
 
@@ -133,7 +105,6 @@ function getText() {
   const meme = getMeme()
   const memeInfo = meme.lines
   const msgInput = memeInfo[0].txt
-  console.log(msgInput.length)
 
   const yPositions = [6, 3, 2]
   const totalLines = Math.min(msgInput.length, yPositions.length)
@@ -141,7 +112,6 @@ function getText() {
   msgInput.slice(0, totalLines).forEach((msg, idx) => {
     const yPos = gElCanvas.height / yPositions[idx]
     drawText(msg, gElCanvas.width / 2, yPos)
-    console.log(idx)
   })
 }
 
@@ -165,28 +135,8 @@ function drawText(text, x, y) {
 }
 
 function triggerColorPicker() {
-  console.log('triggerColorPicker')
-
   document.getElementById('favcolor').click()
 }
-
-// function selectColor() {
-//   console.log('selectColor')
-
-//   const color = document.getElementById('favcolor').value
-//   gColor = color
-//   drawText('Hello World', 400, 300) // Example text and position
-//   document.getElementById('colorPickerButton').style.backgroundColor = gColor
-// }
-
-// function selectColor() {
-//   var selectedColor = '#ff0000' // Example: red color
-
-//   gColor = selectedColor
-
-//   var colorPickerImg = document.querySelector('.color-picker-img')
-//   colorPickerImg.style.filter = 'hue-rotate(100deg)' // Example:
-// }
 
 function setStroke() {
   gStroke = !gStroke
